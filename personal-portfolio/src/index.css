@@ -1,0 +1,67 @@
+/* Keyframes for meteorites animation */
+@keyframes meteor-shower {
+  0% {
+    transform: translateX(0) translateY(0) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(calc(-500px + 100vw)) translateY(calc(500px - 100vh)) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* Keyframes for gradient movement */
+@keyframes sky-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Background container */
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(120deg, #1e026d, #0b084a, #240b36);
+  background-size: 400% 400%;
+  animation: sky-gradient 20s ease infinite;
+  height: 100vh;
+  overflow: hidden;
+  color: white;
+}
+
+/* Stars (sparkles) */
+.stars {
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  animation: twinkle 2s infinite;
+}
+
+/* Twinkling stars animation */
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Meteorites */
+.meteor {
+  width: 4px;
+  height: 20px;
+  background: linear-gradient(45deg, white, transparent);
+  position: absolute;
+  transform: rotate(45deg);
+  animation: meteor-shower 3s linear infinite;
+  animation-timing-function: ease-in-out;
+}
