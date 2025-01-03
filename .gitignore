@@ -1,0 +1,13 @@
+# Logs
+logs/
+*.log
+
+# Node.js
+node_modules/
+package-lock.json
+
+# System Files
+.DS_Store
+
+# Environment Variables
+.env
