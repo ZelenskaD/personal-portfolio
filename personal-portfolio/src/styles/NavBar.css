@@ -1,9 +1,17 @@
+
+
+/* Navbar when scrolled */
+.navbar.scrolled {
+    background: rgba(30, 2, 109, 0.9); /* Darker gradient when scrolled */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
 /* Navbar Base Styling */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1rem 2rem; /* Adjust padding for spacing */
     background: rgba(30, 2, 109, 0.7); /* Slightly transparent background */
     backdrop-filter: blur(10px); /* Adds a frosted glass effect */
     color: white;
@@ -14,22 +22,19 @@
     transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Navbar when scrolled */
-.navbar.scrolled {
-    background: rgba(30, 2, 109, 0.9); /* Darker gradient when scrolled */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-}
-
-/* Gradient Logo Text */
+/* Logo Gradient Text */
 .gradient-text {
     background: linear-gradient(90deg, white, pink, purple);
     background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: gradient-animation 3s ease infinite;
-    font-size: 2.5rem;
+    font-size: 2rem; /* Adjust font size */
     font-weight: bold;
+    line-height: 1.2; /* Ensure enough space around text */
     text-decoration: none;
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: visible; /* Prevent any cutting of the logo */
 }
 
 /* Keyframes for Gradient Animation */
@@ -109,23 +114,46 @@
 }
 
 /* Social Media Links */
-.social-links {
-    display: flex;
-    gap: 1rem; /* Space between icons */
+/* Social Media Links */
+.social-icon {
+    display: inline-block;
+    position: relative; /* Ensure ::before stays within the parent */
+    margin-left: 14px;
 }
-
-.social-icon img {
-    width: 60px; /* Adjust the size of the circle */
-    height: 60px;
-    border-radius: 50%; /* Makes the image a circle */
-    background: white; /* White transparent background */
-    padding: 5px; /* Adds spacing between the image and the background */
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow for a subtle effect */
+.social-icon a {
+    width: 50px;
+    height: 50px;
+    background: rgba(217, 217, 217, 0.1);
+    display: inline-flex;
+    border-radius: 50%;
+    margin-right: 6px;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    position: relative;
+    overflow: hidden; /* Prevent overflow of ::before */
 }
-
-.social-icon img:hover {
-    transform: scale(1.1); /* Slight zoom on hover */
-    opacity: 0.9; /* Increases visibility on hover */
+.social-icon a::before {
+    content: "";
+    width: 42px;
+    height: 42px;
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 0.3s ease-in-out;
+    z-index: 0; /* Keep behind the image */
 }
-
+.social-icon a:hover::before {
+    transform: scale(1);
+    background-color: white; /* Slight transparency */
+}
+.social-icon a img {
+    width: 40%;
+    z-index: 1; /* Ensure it stays above the ::before */
+    transition: 0.3s ease-in-out;
+}
+.social-icon a:hover img {
+    filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rotate(346deg) brightness(95%) contrast(86%);
+}
