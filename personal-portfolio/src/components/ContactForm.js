@@ -82,7 +82,7 @@ const ContactForm = () => {
                             name="name"
                             value={formData.name}
                             onChange={handleChange}
-                            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm text-black focus:ring-pink-500 focus:border-pink-500"
+                            className="mt-1 block w-full rounded-md border-gray-800 shadow-sm text-black bg-gradient-to-r from-purple-100  via-pink-100  to-purple-100 focus:ring-pink-500 focus:border-pink-500"
                             required
                         />
                     </div>
@@ -97,7 +97,7 @@ const ContactForm = () => {
                             name="email"
                             value={formData.email}
                             onChange={handleChange}
-                            className={`mt-1 block w-full rounded-md shadow-sm text-black focus:ring-pink-500 focus:border-pink-500 ${
+                            className={`mt-1 block w-full rounded-md shadow-sm text-black bg-gradient-to-r from-purple-100  via-pink-100  to-purple-100  focus:ring-pink-500 focus:border-pink-500 ${
                                 emailError ? "border-red-500" : "border-gray-300"
                             }`}
                             required
@@ -117,7 +117,7 @@ const ContactForm = () => {
                             value={formData.message}
                             onChange={handleChange}
                             rows="4"
-                            className="mt-1 block w-full rounded-md border-gray-300 text-black shadow-sm focus:ring-pink-500 focus:border-pink-500"
+                            className="mt-1 block w-full rounded-md border-gray-300 text-black shadow-sm bg-gradient-to-r from-purple-100  via-pink-100  to-purple-100  focus:ring-pink-500 focus:border-pink-500"
                             required
                         />
                     </div>
