@@ -43,7 +43,9 @@ const ProjectsComponent = () => {
     };
 
     return (
-        <section className="bg-gradient-to-r from-purple-900 to-blue-900 bg-opacity-80 py-16  mt-16" id="projects">
+        <section className="bg-gradient-to-r from-purple-900 to-blue-900 bg-opacity-80 py-16  mt-16" id="projects" style={{
+            background: "linear-gradient(to right, rgba(59, 0, 91, 0.8), rgba(13, 25, 102, 0.8))"
+        }}>
 
             <div className="container mx-auto px-6">
 

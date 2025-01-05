@@ -16,7 +16,9 @@ const AboutComponent = () => {
     };
 
     return (
-        <section className="about-section bg-gradient-to-r from-purple-900 to-blue-900 bg-opacity-80 py-16" id="about">
+        <section className="about-section bg-gradient-to-r from-purple-900 to-blue-900 bg-opacity-60 py-16" id="about" style={{
+            background: "linear-gradient(to right, rgba(59, 0, 91, 0.8), rgba(13, 25, 102, 0.8))"
+        }}>
             <div className="container mx-auto px-6">
                 <h2 className="text-3xl font-bold text-white bg-gradient-to-l    from-purple-500 via-pink-500 to-purple-500 rounded-full  mb-8 text-center">About Me</h2>
                 <div className="flex flex-col lg:flex-row items-center py-16 gap-8">
