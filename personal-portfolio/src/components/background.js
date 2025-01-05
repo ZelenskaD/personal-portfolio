@@ -4,7 +4,6 @@ const Background = () => {
     const [stars, setStars] = useState([]);
     const [meteors, setMeteors] = useState([]);
 
-    // Generate random stars
     useEffect(() => {
         const newStars = Array.from({ length: 100 }, () => ({
             top: `${Math.random() * 100}vh`,
@@ -12,8 +11,7 @@ const Background = () => {
         }));
         setStars(newStars);
 
-        // Generate meteorites with random directions and delays
-        const newMeteors = Array.from({ length: 7 }, () => ({
+        const newMeteors = Array.from({ length: 10 }, () => ({
             top: `${Math.random() * 100}vh`,
             left: `${Math.random() * 100}vw`,
             delay: `${Math.random() * 5}s`,
@@ -23,7 +21,6 @@ const Background = () => {
 
     return (
         <div className="background">
-            {/* Render stars */}
             {stars.map((star, index) => (
                 <div
                     key={index}
@@ -31,8 +28,6 @@ const Background = () => {
                     style={{ top: star.top, left: star.left }}
                 ></div>
             ))}
-
-            {/* Render meteorites */}
             {meteors.map((meteor, index) => (
                 <div
                     key={index}
@@ -49,3 +44,4 @@ const Background = () => {
 };
 
 export default Background;
+

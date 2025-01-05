@@ -6,126 +6,87 @@ import navIcon3 from "../images/nav-icon3.png";
 
 export const NavBar = () => {
     const [scrolled, setScrolled] = useState(false);
-    const [activeLink, setActiveLink] = useState("home");
-    const [isMenuOpen, setIsMenuOpen] = useState(false); // State for hamburger menu
-    const [isSocialOpen, setIsSocialOpen] = useState(false); // State for social icons toggler
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     useEffect(() => {
         const onScroll = () => {
-            if (window.scrollY > 50) {
-                setScrolled(true);
-            } else {
-                setScrolled(false);
-            }
+            setScrolled(window.scrollY > 50);
         };
 
         window.addEventListener("scroll", onScroll);
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
-    const handleSetActiveLink = (link) => {
-        setActiveLink(link);
-        setIsMenuOpen(false); // Close menu after clicking a link
-    };
-
     const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen); // Toggles the hamburger menu
-    };
-
-    const toggleSocialIcons = () => {
-        setIsSocialOpen(!isSocialOpen); // Toggles social icons
+        setIsMenuOpen(!isMenuOpen);
     };
 
     return (
-        <nav className={`navbar ${scrolled ? "scrolled" : ""} bg-gradient-to-r from-purple-800 to-blue-600 shadow-lg`}>
-            <div className="container flex items-center justify-between px-4 py-3">
-                {/* Gradient Logo */}
-                <a href="#home" className="gradient-text text-xl font-bold">
+        <nav
+            className={`navbar fixed top-0 left-0 w-full z-50 ${
+                scrolled ? "bg-blue-800 shadow-lg" : "bg-gradient-to-r from-purple-800 to-blue-600"
+            }`}
+        >
+            <div className="container mx-auto flex justify-between items-center px-6 py-4">
+                {/* Logo */}
+                <a href="#home" className="gradient-text-logo text-4xl font-extrabold">
                     Surganov
                 </a>
 
-                {/* Hamburger Menu Icon */}
+                {/* Hamburger Icon */}
                 <div
-                    className="hamburger md:hidden cursor-pointer ml-auto"
+                    className="hamburger md:hidden cursor-pointer"
                     onClick={toggleMenu}
                 >
-                    <span className="block w-6 h-1 bg-white my-1 transition-all duration-300"></span>
-                    <span className="block w-6 h-1 bg-white my-1 transition-all duration-300"></span>
-                    <span className="block w-6 h-1 bg-white my-1 transition-all duration-300"></span>
-                </div>
-            </div>
-
-            {/* Navigation Links & Social Media Icons */}
-            <div
-                className={`menu-links ${isMenuOpen ? "block" : "hidden"} md:flex md:items-center md:space-x-6 bg-purple-900 md:bg-transparent w-full md:w-auto px-4 md:px-0`}
-            >
-                <div className="nav-links flex flex-col md:flex-row md:space-x-8 space-y-4 md:space-y-0 py-4 md:py-0">
-                    <a
-                        href="#about"
-                        onClick={() => handleSetActiveLink("about")}
-                        className={`nav-link text-white ${
-                            activeLink === "about" ? "font-semibold underline" : ""
-                        }`}
-                    >
-                        About
-                    </a>
-                    <a
-                        href="#skills"
-                        onClick={() => handleSetActiveLink("skills")}
-                        className={`nav-link text-white ${
-                            activeLink === "skills" ? "font-semibold underline" : ""
-                        }`}
-                    >
-                        Skills
-                    </a>
-                    <a
-                        href="#projects"
-                        onClick={() => handleSetActiveLink("projects")}
-                        className={`nav-link text-white ${
-                            activeLink === "projects" ? "font-semibold underline" : ""
-                        }`}
-                    >
-                        Projects
-                    </a>
+                    <span className="block w-8 h-1 bg-white my-1 transition-transform"></span>
+                    <span className="block w-8 h-1 bg-white my-1 transition-transform"></span>
+                    <span className="block w-8 h-1 bg-white my-1 transition-transform"></span>
                 </div>
 
-                {/* Social Media Icons Toggler */}
-                <div className="social-icons-toggler md:hidden cursor-pointer py-3" onClick={toggleSocialIcons}>
-                    <span className="block w-6 h-1 bg-white my-1 transition-all duration-300"></span>
-                    <span className="block w-6 h-1 bg-white my-1 transition-all duration-300"></span>
-                </div>
-
-                {/* Social Media Icons */}
+                {/* Navigation Links */}
                 <div
-                    className={`social-links flex-col md:flex-row md:space-x-4 ${
-                        isSocialOpen ? "flex" : "hidden"
-                    } md:flex justify-center space-y-4 md:space-y-0 py-4 md:py-0`}
+                    className={`menu-links ${
+                        isMenuOpen ? "block" : "hidden"
+                    } md:flex md:items-center md:space-x-6 bg-blue-900 md:bg-transparent w-full md:w-auto px-4 md:pl-16`}
                 >
-                    <div className="social-icon">
+                    <div className="nav-links flex flex-col md:flex-row md:space-x-8 space-y-4 md:space-y-0 py-4 md:py-0">
+                        <a href="#about" className="nav-link text-white">
+                            About
+                        </a>
+                        <a href="#skills" className="nav-link text-white">
+                            Skills
+                        </a>
+                        <a href="#projects" className="nav-link text-white">
+                            Projects
+                        </a>
+                    </div>
+
+                    {/* Social Media Icons */}
+                    <div
+                        className="flex flex-col md:flex-row md:justify-end md:space-x-4 space-y-2 md:space-y-0 py-4 md:py-0">
                         <a
                             href="https://www.linkedin.com/in/daria-surganov"
                             target="_blank"
                             rel="noopener noreferrer"
+                            className="social-icon bg-pink-500 hover:bg-pink-600 p-2 rounded-full"
                         >
-                            <img src={navIcon1} alt="LinkedIn" />
+                            <img src={navIcon1} alt="LinkedIn" className="w-5 h-5"/>
                         </a>
-                    </div>
-                    <div className="social-icon">
                         <a
                             href="https://www.instagram.com/_zelenska_ya_"
                             target="_blank"
                             rel="noopener noreferrer"
+                            className="social-icon bg-purple-500 hover:bg-purple-600 p-2 rounded-full"
                         >
-                            <img src={navIcon3} alt="Instagram" />
+                            <img src={navIcon3} alt="Instagram" className="w-5 h-5"/>
                         </a>
-                    </div>
-                    <div className="social-icon">
                         <a
                             href="https://github.com/zelenskaD"
                             target="_blank"
                             rel="noopener noreferrer"
+                            className="social-icon bg-white hover:bg-blue-600 p-2 rounded-full"
                         >
-                            <img src={navIcon2} alt="GitHub" />
+                            <img src={navIcon2} alt="GitHub" className="w-5 h-5"/>
                         </a>
                     </div>
                 </div>
@@ -135,6 +96,10 @@ export const NavBar = () => {
 };
 
 export default NavBar;
+
+
+
+
 
 
 

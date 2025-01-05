@@ -1,0 +1,45 @@
+.about-section {
+    position: relative;
+}
+
+.about-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.about-section p {
+    line-height: 1.8;
+}
+
+.about-section img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Add this to AboutComponent.css */
+
+/* Animate-border class for more visible animation */
+.animate-border {
+    animation: border-pulse 3s infinite;
+}
+
+/* Keyframes for pulsating border animation */
+@keyframes border-pulse {
+    0% {
+        box-shadow: 0 0 15px 5px rgba(255, 105, 180, 0.6),
+        0 0 30px 10px rgba(138, 43, 226, 0.4),
+        0 0 45px 20px rgba(255, 192, 203, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 20px 10px rgba(255, 105, 180, 0.8),
+        0 0 40px 20px rgba(138, 43, 226, 0.6),
+        0 0 60px 30px rgba(255, 192, 203, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 15px 5px rgba(255, 105, 180, 0.6),
+        0 0 30px 10px rgba(138, 43, 226, 0.4),
+        0 0 45px 20px rgba(255, 192, 203, 0.3);
+    }
+}

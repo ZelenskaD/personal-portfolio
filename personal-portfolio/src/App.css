@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+.animate-border {
+  background-size: 200% 200%;
+}
+
 .App {
   text-align: center;
 }
@@ -15,6 +21,9 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+html {
+  scroll-behavior: smooth;
 }
 
 .App-header {
@@ -40,3 +49,50 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+
+@keyframes shineEffect {
+  0% {
+    transform: scale(1) translate(-50%, -50%);
+    opacity: 0.7;
+    box-shadow: 0 0 10px 5px rgba(138, 43, 226, 0.4);
+  }
+  50% {
+    transform: scale(1.2) translate(-50%, -50%);
+    opacity: 1;
+    box-shadow: 0 0 20px 10px rgba(138, 43, 226, 0.8);
+  }
+  100% {
+    transform: scale(1) translate(-50%, -50%);
+    opacity: 0.7;
+    box-shadow: 0 0 10px 5px rgba(138, 43, 226, 0.4);
+  }
+}
+
+.particle {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(circle, rgba(186, 85, 211, 0.8), rgba(255, 255, 255, 0));
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 0 0 10px 5px rgba(186, 85, 211, 0.6);
+  animation: trailFade 0.7s forwards ease-out;
+  transform: translate(-50%, -50%);
+}
+
+/* Trail fade-out animation */
+@keyframes trailFade {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+
+

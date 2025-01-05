@@ -30,10 +30,13 @@ body {
   background: linear-gradient(120deg, #1e026d, #0b084a, #240b36);
   background-size: 400% 400%;
   animation: sky-gradient 20s ease infinite;
-  height: 100vh;
-  overflow: hidden;
+  height: auto; /* Allow body to adjust height based on content */
+  overflow-x: hidden; /* Prevent horizontal scroll */
   color: white;
+  min-height: 100vh;
+
 }
+
 
 /* Stars (sparkles) */
 .stars {
@@ -120,3 +123,5 @@ body {
     background-size: 200% 200%; /* Further reduce background movement speed */
   }
 }
+
+
