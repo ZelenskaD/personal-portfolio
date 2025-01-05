@@ -6,10 +6,11 @@ import ProjectsComponent from './components/ProjectsComponent';
 import Background from './components/background';
 import MouseShine from "./components/MouseShine";
 import AboutComponent from "./components/AboutComponent";
+import FooterComponent from "./components/FooterComponent";
 
 function App() {
     return (
-        <div className="relative">
+        <div className="relative min-h-screen">
             <Background />
             <MouseShine />
 
@@ -19,6 +20,7 @@ function App() {
                 <AboutComponent/>
                 <SkillsComponent />
                 <ProjectsComponent />
+                <FooterComponent/>
             </div>
         </div>
     );

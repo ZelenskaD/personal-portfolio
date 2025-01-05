@@ -1,6 +1,15 @@
 .navbar {
-    transition: background 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
+
+.gradient-text {
+    margin: 0; /* Ensure no unintended margins */
+    padding: 0; /* Ensure no unintended padding */
+}
+
+
 
 /* Logo Gradient Text */
 .gradient-text-logo{
