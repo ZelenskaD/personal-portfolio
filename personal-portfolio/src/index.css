@@ -211,3 +211,17 @@ section {
   width: 100%;
   overflow: hidden;
 }
+
+.center-on-mobile {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media (min-width: 1023px) {
+  .center-on-mobile {
+    display: inline-block; /* Reset centering for larger screens */
+    margin: 0;
+    text-align: left;
+  }
+}

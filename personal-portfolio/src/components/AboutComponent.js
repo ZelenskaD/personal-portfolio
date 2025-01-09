@@ -20,7 +20,7 @@ const AboutComponent = () => {
             background: "linear-gradient(to right, rgba(59, 0, 91, 0.8), rgba(13, 25, 102, 0.8))"
         }}>
             <div className="container mx-auto px-6">
-                <h2 className="text-3xl font-bold text-white bg-gradient-to-l    from-purple-500 via-pink-500 to-purple-500 rounded-full  mb-8 text-center">About Me</h2>
+                <h2 className="text-3xl font-bold text-white bg-gradient-to-l    from-purple-500 via-pink-500 to-purple-500 rounded-full py-4 mb-8 text-center">About Me</h2>
                 <div className="flex flex-col lg:flex-row items-center py-16 gap-8">
                     {/* Profile Image */}
                     <div className="lg:w-1/3 relative flex items-center justify-center">

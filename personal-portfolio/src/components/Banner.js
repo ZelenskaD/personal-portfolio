@@ -29,7 +29,7 @@ export const Banner = () => {
                     </p>
                     <button
                         onClick={openModal}
-                        className="bg-pink-500 hover:bg-pink-600 text-white font-medium py-2 px-4 rounded-full shadow-lg transition-all duration-300 flex items-center"
+                        className="bg-pink-500 hover:bg-pink-600 text-white  font-medium py-2 px-4 rounded-full shadow-lg transition-all duration-300 flex items-center center-on-mobile"
                     >
                         Let’s Connect
                     </button>

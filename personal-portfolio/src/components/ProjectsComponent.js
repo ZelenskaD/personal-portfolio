@@ -49,7 +49,7 @@ const ProjectsComponent = () => {
 
             <div className="container mx-auto px-6">
 
-                <h2 className="text-3xl  font-bold text-white mb-8 text-center  bg-gradient-to-l    from-purple-500 via-pink-500 to-purple-500 rounded-full ">Projects</h2>
+                <h2 className="text-3xl  font-bold text-white mb-8 py-4 text-center  bg-gradient-to-l    from-purple-500 via-pink-500 to-purple-500 rounded-full ">Projects</h2>
                 <div className="space-y-12 py-16">
                     {projects.map((project, index) => (
                         <div

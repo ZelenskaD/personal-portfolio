@@ -30,7 +30,7 @@ export const NavBar = () => {
             <div className="container mx-auto flex justify-between items-center px-6 py-4">
                 {/* Logo */}
                 <a href="#home" className="gradient-text-logo text-4xl font-extrabold">
-                    Surganov
+                    Daria Surganov
                 </a>
 
                 {/* Hamburger Icon */}

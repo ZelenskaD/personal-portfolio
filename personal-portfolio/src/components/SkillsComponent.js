@@ -22,7 +22,7 @@ const SkillsComponent = () => {
 
             {/* Content with relative positioning to stay above the overlay */}
             <div className="relative container mx-auto px-6 text-center">
-                <h2 className="text-3xl font-bold text-white mb-8 bg-gradient-to-l from-purple-500 via-pink-500 to-purple-500 rounded-full">
+                <h2 className="text-3xl font-bold text-white mb-8 py-4 bg-gradient-to-l from-purple-500 via-pink-500 to-purple-500 rounded-full">
                     Skills
                 </h2>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 py-16 gap-8">
