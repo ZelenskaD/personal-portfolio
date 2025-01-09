@@ -11,3 +11,6 @@ package-lock.json
 
 # Environment Variables
 .env
+
+# Jet Brains
+.idea
