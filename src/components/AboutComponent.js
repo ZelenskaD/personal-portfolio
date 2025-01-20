@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles/AboutComponent.css";
 import photo2 from "../images/photo2.jpg";
-import resumeFile from "../files/DariaSurganovResume.docx";
+import resumeFile from "../files/Daria'sResume.docx";
 import certificateImg from "../images/certificate.jpg";
 
 const AboutComponent = () => {
