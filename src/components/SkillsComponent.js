@@ -6,11 +6,16 @@ const skills = [
     { name: "JavaScript", icon: require("../images/js.png"), description: "Programming Language" },
     { name: "React", icon: require("../images/react.png"), description: "Frontend Framework" },
     { name: "Node.js", icon: require("../images/node.png"), description: "Backend Development" },
+    { name: "TypeScript", icon: require("../images/typescript.png"), description: "Superset of JavaScript" },
     { name: "Python", icon: require("../images/python.png"), description: "Backend Development" },
+    { name: "Git", icon: require("../images/git.png"), description: "Version Control System" },
+    { name: "PostgreSQL", icon: require("../images/postgresql.png"), description: "Relational Database" },
     { name: "HTML", icon: require("../images/html.png"), description: "Markup Language" },
     { name: "CSS", icon: require("../images/css.png"), description: "Styling" },
     { name: "Tailwind CSS", icon: require("../images/tailwind.png"), description: "Utility-First CSS" },
     { name: "Bootstrap", icon: require("../images/bootstrap.png"), description: "Frontend Framework" },
+    { name: "Figma", icon: require("../images/figma.webp"), description: "Design Tool" },
+
 ];
 
 

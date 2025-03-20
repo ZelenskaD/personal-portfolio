@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles/AboutComponent.css";
 import photo2 from "../images/photo2.jpg";
-import resumeFile from "../files/Daria'sResume.docx";
+import resumeFile from "../files/Resume.pdf";
 import certificateImg from "../images/certificate.jpg";
 
 const AboutComponent = () => {
@@ -53,7 +53,7 @@ const AboutComponent = () => {
                         <div className="flex flex-wrap gap-4">
                             <a
                                 href={resumeFile}
-                                download="Daria'sResume.docx"
+                                download="Resume.pdf"
                                 className="bg-pink-500 hover:bg-pink-600 text-white font-medium py-2 px-4 rounded-full shadow-lg transition-all duration-300 inline-flex items-center"
                             >
                                 Download My Resume
