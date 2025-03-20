@@ -2,6 +2,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: #6b21a8 !important; /* Strong override with !important */
+    opacity: 1 !important;
 }
 
 .gradient-text {
@@ -9,14 +11,12 @@
     padding: 0; /* Ensure no unintended padding */
 }
 
-
-
 /* Logo Gradient Text */
 .gradient-text-logo{
     background: linear-gradient(90deg, #ff80bf, #9089fc);
     background-clip: text;
     -webkit-background-clip: text;
-    color: transparent;
+    color: transparent; /* Add this to ensure the text is transparent showing only the gradient */
     font-size: 2rem;
     font-weight: bold;
     white-space: nowrap; /* Prevent text wrapping */
@@ -45,7 +45,7 @@
         top: 100%;
         left: 0;
         right: 0;
-        background: rgba(30, 30, 30, 0.9);
+        background: #1e1e1e !important; /* Fully opaque with !important */
         z-index: 1000;
         padding: 1rem;
         border-radius: 0 0 10px 10px;

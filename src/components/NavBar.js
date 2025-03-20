@@ -21,11 +21,28 @@ export const NavBar = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
+    // Define inline styles to ensure they override any existing styles
+    const navbarStyle = {
+        backgroundColor: scrolled ? "#7e22ce" : "#6b21a8",
+        opacity: 1,
+    };
+
+    const mobileMenuStyle = {
+        position: "absolute",
+        top: "100%",
+        left: 0,
+        right: 0,
+        backgroundColor: "#1e1e1e",
+        zIndex: 1000,
+        padding: "1rem",
+        borderRadius: "0 0 10px 10px",
+        display: isMenuOpen ? "block" : "none"
+    };
+
     return (
         <nav
-            className={`navbar fixed top-0 left-0 w-full z-50 ${
-                scrolled ? "bg-purple-700 shadow-lg" : "bg-gradient-to-r from-purple-800 "
-            }`}
+            className="navbar fixed top-0 left-0 w-full z-50"
+            style={navbarStyle}
         >
             <div className="container mx-auto flex justify-between items-center px-6 py-4">
                 {/* Logo */}
@@ -43,11 +60,10 @@ export const NavBar = () => {
                     <span className="block w-8 h-1 bg-white my-1 transition-transform"></span>
                 </div>
 
-                {/* Navigation Links */}
+                {/* Navigation Links - using conditional rendering for mobile */}
                 <div
-                    className={`menu-links ${
-                        isMenuOpen ? "block" : "hidden"
-                    } md:flex md:items-center md:space-x-6 bg-blue-900 md:bg-transparent w-full md:w-auto px-4 md:pl-16`}
+                    className="menu-links md:flex md:items-center md:space-x-6 md:bg-transparent w-full md:w-auto px-4 md:pl-16"
+                    style={window.innerWidth < 768 ? mobileMenuStyle : {}}
                 >
                     <div className="nav-links flex flex-col md:flex-row md:space-x-8 space-y-4 md:space-y-0 py-4 md:py-0">
                         <a href="#about" className="nav-link text-white">
