@@ -5,10 +5,20 @@ import portfolio2 from "../images/portfolio2.png";
 import nyxisMain from "../images/nyxisMain.png";
 import nyxisMobile from "../images/nyxisMobile.png";
 import blades from "../images/blades.png";
-import Background from "../components/background";
+// import Background from "../components/background";
+import prototype1 from "../images/prototype1.png";
+import prototype2 from "../images/prototype2.png";
+
 
 
 const projects = [
+    {
+        title: "Prototype of Mobile App for Whiskey Store",
+        images: [prototype1, prototype2],
+        description:
+            "The mobile high-fidelity prototype displays an elegant whiskey shopping experience with a sophisticated design aesthetic. The app features a luxurious gold and marble-inspired color scheme that perfectly complements the premium whiskey products. The design effectively communicates luxury through its consistent visual language, typography choices, and photography style, making it appealing to whiskey enthusiasts and collectors. The user flow is intuitive and focused on showcasing the premium nature of the products while maintaining a smooth purchasing experience.",
+        url: "https://www.figma.com/design/YbsvExCWWKczy6hUwQOkSX/Surganov-Whiskey-V1?node-id=58-200&m=dev&t=AP87XDkNOGqLHRLL-1",
+    },
     {
         title: "Portfolio Website",
         images: [portfolio1, portfolio2],
@@ -43,21 +53,17 @@ const ProjectsComponent = () => {
     };
 
     return (
-        <section className="bg-gradient-to-r from-purple-900 to-blue-900 bg-opacity-80 py-16  mt-16" id="projects" style={{
+        <section className="bg-gradient-to-r from-purple-900 to-blue-900 bg-opacity-80 py-16 mt-16" id="projects" style={{
             background: "linear-gradient(to right, rgba(59, 0, 91, 0.8), rgba(13, 25, 102, 0.8))"
         }}>
-
             <div className="container mx-auto px-6">
-
-                <h2 className="text-3xl  font-bold text-white mb-8 py-4 text-center  bg-gradient-to-l    from-purple-500 via-pink-500 to-purple-500 rounded-full ">Projects</h2>
+                <h2 className="text-3xl font-bold text-white mb-8 py-4 text-center bg-gradient-to-l from-purple-500 via-pink-500 to-purple-500 rounded-full">Projects</h2>
                 <div className="space-y-12 py-16">
                     {projects.map((project, index) => (
                         <div
                             key={index}
                             className="project-card flex flex-col lg:flex-row custom-card-bg p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
                         >
-
-
                             {/* Images */}
                             <div className="flex lg:w-1/2 space-x-4 overflow-x-scroll">
                                 {project.images.map((image, i) => (
@@ -74,21 +80,32 @@ const ProjectsComponent = () => {
                             <div className="lg:w-1/2 mt-6 lg:mt-0 lg:ml-6">
                                 <h3 className="text-2xl font-semibold text-white mb-4">{project.title}</h3>
                                 <p className="text-gray-300 mb-4">{project.description}</p>
-                                <a
-                                    href={project.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="bg-pink-500 hover:bg-pink-600 text-white font-medium py-2 px-4 rounded-full shadow-lg transition-all duration-300 inline-block"
-                                >
-                                    Visit Website
-                                </a>
+                                {index === 0 ? (
+                                    <a
+                                        href="https://www.figma.com/proto/YbsvExCWWKczy6hUwQOkSX/Surganov-Whiskey-V1?node-id=58-200&t=AP87XDkNOGqLHRLL-1"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="bg-pink-500 hover:bg-pink-600 text-white font-medium py-2 px-4 rounded-full shadow-lg transition-all duration-300 inline-block"
+                                    >
+                                        View Interactive Prototype
+                                    </a>
+                                ) : (
+                                    <a
+                                        href={project.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="bg-pink-500 hover:bg-pink-600 text-white font-medium py-2 px-4 rounded-full shadow-lg transition-all duration-300 inline-block"
+                                    >
+                                        Visit Website
+                                    </a>
+                                )}
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
 
-            {/* Modal */}
+            {/* Image Modal */}
             {selectedImage && (
                 <div
                     className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50"
@@ -117,5 +134,3 @@ const ProjectsComponent = () => {
 };
 
 export default ProjectsComponent;
-
-
